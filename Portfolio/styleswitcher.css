@@ -1,0 +1,78 @@
+.styleswitcher
+{
+    position: fixed;
+    right: 0;
+    border: 1px solid var(--bg-black-50);
+    transition: all 0.5s ease;
+    border-radius: 7%;
+    padding: 16px;
+    width: 250px;
+    background: var(--bg-black-100);
+    z-index: 101;
+    top: 5%;
+    transform: translateX(100%);/*dissapear color patterns*/
+}
+.styleswitcher.open
+{
+    transform: translateX(-25px);
+}
+.styleswitcher .s-icon{/*setting the icons*/
+    height: 40px;
+    width: 40px;
+    right: 100%;
+    position: absolute;
+    cursor: pointer;
+    background: var(--bg-black-100);
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid var(--bg-black-50);
+    margin-right: 26px;
+    border-radius: 55%;
+    transition: all 0.5s ease;
+    color: var(--text-black-900);
+}
+.styleswitcher .s-icon i{/*setting the moon icon*/
+    line-height: 40px;
+}
+.styleswitcher .styleswitcher-toggler/*setting the setting icon*/
+{
+   top: 0; 
+}
+.styleswitcher .day-night{
+    top: 55px;
+}
+.styleswitcher h4{
+    color: var(--text-black-700);
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+}
+.styleswitcher .colors{
+    display: flex;
+    flex-wrap: wrap;/*setting up each color choosing icon distance*/
+    justify-content: space-between;
+
+}
+.styleswitcher .colors span{/*setting the color choosing icon*/
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    border: 1px solid red;/*setting the color choosing icon border icon*/
+    border-radius: 50%;/*circle*/
+}
+.styleswitcher .color1{/*setting color 1*/
+    background-color: #ec1839;
+}
+.styleswitcher .color2{/*setting color 2*/
+    background-color: #fa5b0f;
+}
+.styleswitcher .color3{/*setting color 3*/
+    background-color: #37b182;
+}
+.styleswitcher .color4{/*setting color 4*/
+    background-color: #1854b4;
+}
+.styleswitcher .color5{/*setting color 5*/
+    background-color: #f021b2;
+}
