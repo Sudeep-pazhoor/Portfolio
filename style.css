@@ -274,13 +274,16 @@ ul{
     margin-right: 15px;
 }
 @media (max-width: 768px) {
-    /* Hide the sidebar by default */
-    .aside {
-    width: 0;
-    overflow: hidden;
-    padding: 0;
-        transition: width 0.3s ease; /* Smooth transition when toggling */
-    }
+/* Toggle Button */
+.nav-toggler {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
     /* Show toggle button */
     .aside .nav-toggler {
