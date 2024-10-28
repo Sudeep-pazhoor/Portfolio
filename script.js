@@ -27,10 +27,13 @@ for (let i = 0; i < totalNavList; i++) {
 const toggler = document.querySelector('.nav-toggler');
 const aside = document.querySelector('.aside');
 
-toggler.addEventListener('click', function () {
-    aside.classList.toggle('open'); 
+document.getElementById("nav-toggler").addEventListener("click", function () {
+    // Toggle active class for hamburger icon
+    this.classList.toggle("active");
     console.log("Toggle button clicked!");
-    // Toggle the 'open' class on sidebar
+
+    // Toggle visibility of the navigation menu
+    document.querySelector(".nav-menu").classList.toggle("active");
 });
 
 // Optional: Close the sidebar when a nav link is clicked on small screens
@@ -41,4 +44,6 @@ for (let i = 0; i < totalNavList; i++) {
             aside.classList.remove('open'); // Close the sidebar
         }
     });
-  });
+};
+
+

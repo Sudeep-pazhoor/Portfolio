@@ -274,61 +274,50 @@ ul{
     margin-right: 15px;
 }
 @media (max-width: 768px) {
-/* Toggle Button */
-.nav-toggler {
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-    /* Show toggle button */
-    .aside .nav-toggler {
-    display: flex;
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    cursor: pointer;
-    z-index: 15;
-}
-
-/* Hide the navigation menu by default */
-.nav-menu {
-  display: none;
-}
-
-    /* When the sidebar is toggled (open state) */
-    .aside.open {
-    width: 270px;
-    padding: 30px;
-}
-
-    /* Styles for the navigation items when the sidebar is open */
-    .aside.open .nav {
-    display: flex;
-    flex-direction: column;
-}
-
-    .aside .nav li {
-        display: block; /* Ensure nav items display as blocks */
+    /* Toggle Button */
+    .nav-toggler {
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
 
-    /* Additional styles for nav links */
-    .aside .nav li a {
-    font-size: 16px;
-    color: var(--text-black-900);
-    padding: 5px 15px;
-    border-bottom: 1px solid var(--bg-black-50);
-}
+    .nav-toggler span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
+        transition: transform 0.3s ease;
+    }
 
-/* Optional: Hover effects for better UX */
-.aside .nav li a:hover {
-    background-color: var(--bg-gray-200);
-    color: var(--text-black-800);
-}
+    /* Rotate spans when active */
+    .nav-toggler.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggler.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggler.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+        display: none; /* Hide menu initially on small screens */
+        flex-direction: column; /* Vertical layout for mobile */
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .nav-menu.active {
+        display: block; /* Show menu when active */
+    }
 }
 /*home*/
 .home{
