@@ -21,6 +21,7 @@ body{
     line-height: 1.5;
     font-size: 16px;
     font-family: 'poppins' sans-serif;
+
     
 }
 *
@@ -114,6 +115,7 @@ body{
 @media (max-width: 768px) {
     .info-item {
         flex: 1 1 100%; /* Full width on small screens */
+      
     }
 }
 .btn/*Hire Me*/
@@ -392,14 +394,18 @@ h3.my-profession{
     margin: auto;
     border-radius: 5px;
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
     .home {
+        
+        max-width: 100%;
+        margin: auto;
         min-height: 130vh;
         flex-direction: column;
         text-align: center;
     }
 
     .home-info {
+        margin: auto;
         max-width: 100%;
     }
 
@@ -820,5 +826,27 @@ h3.my-profession{
 
         max-width: 100%;
         flex:0 0 100%;
+    }
+}
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: center;
+        text-align: center;
+    }
+
+    .home .home-img {
+        order: -1; /* Moves the image to appear first */
+        display: block !important;
+        
+        max-width: 100%;
+        height: auto;
+        margin: 0px auto 50px auto; /* Center the image with some space below */
+    }
+
+    .home .home-info {
+        order: 1; /* Ensures the text and button come after the image */
+        max-width: 100%;
+        text-align: center;
     }
 }
