@@ -102,6 +102,20 @@ body{
     margin-right: -15px;
     position: relative;
 }
+.info-item {
+    flex: 1 1 30%; 
+    padding: 15px; 
+    min-width: 280px; 
+    box-sizing: border-box; 
+    word-wrap: break-word; 
+}
+
+/* Optional: Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .info-item {
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+}
 .btn/*Hire Me*/
 {
     font-size: 18px;
@@ -122,35 +136,37 @@ body{
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 /*Setting Aside*/
-.aside
-{
-    width: 270px;
+/* Aside Styles */
+.aside {
+    width: 270px; /* Width of the sidebar */
     background: var(--bg-black-100);
     position: fixed;
     left: 0;
     top: 0;
-    padding:30px;
+    padding: 30px;
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Ensure items are arranged vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: flex-start; /* Align items to the left */
     z-index: 10;
+}
 
-}/*Setting unordered list*/
-ul{
+/* Setting unordered list */
+ul {
     list-style: none;  
 }
-/*Setting logo*/
-.aside .logo
-{
+
+/* Setting logo */
+.aside .logo {
     position: absolute;
     top: 50px;
     font-size: 30px;
     text-transform: capitalize;
 }
-.aside .logo a
-{
+
+.aside .logo a {
     color: var(--text-black-900);
     font-weight: 700;
     padding: 15px 20px;
@@ -165,9 +181,9 @@ ul{
     font-size: 40px;
 
 }
-/*Setting logo L shaped near Aside (Left Bottom)*/
-.aside .logo a::before
-{
+
+/* L-shaped borders for the logo */
+.aside .logo a::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -189,9 +205,9 @@ ul{
     top: 0;
     right: 0;
 }
-/*to set one box with 3 lines near Home box*/
-.aside .nav-toggler
-{
+
+/* Navigation toggler styles */
+.aside .nav-toggler {
     height: 40px;
     width: 45px;
     border: 1px solid var(--bg-black-50);
@@ -206,13 +222,13 @@ ul{
     justify-content: center;
 
 }
-.aside .nav-toggler span
-{
-   height: 2px;
-   width: 18px; 
-   background: var(--skin-color);
-   display: inline-block;
-   position: relative;
+
+.aside .nav-toggler span {
+    height: 2px;
+    width: 18px; 
+    background: var(--skin-color);
+    display: inline-block;
+    position: relative;
 
 }/*to set top line above current formed line(mid)*/
 .aside .nav-toggler span::before{
@@ -223,10 +239,8 @@ ul{
     position: absolute;
     top: -6px;
     left: 0;
-
 }
-/*to set bottom line below current formed line(mid)*/
-.aside .nav-toggler span::after{
+.aside .nav-toggler span::after {
     content: '';
     height: 2px;
     width: 18px;
@@ -234,23 +248,32 @@ ul{
     position: absolute;
     bottom: -6px;
     left: 0;
+}
 
-}/*to set content appearence of aside tagged elements*/
-.aside .nav{
-    margin-top: 50px;
+/* Navigation menu styles */
+.aside .nav {
+    margin-top: 80px; /* Adjusted margin to avoid overlap with logo and toggler */
+    width: 100%; /* Ensures nav takes full width of aside */
+    display: none; /* Initially hide the nav for smaller screens */
 }
-.aside .nav li
-{
-    margin-bottom: 20px;
-    display: block;
+
+.aside .nav.active {
+    display: block; /* Show nav when active */
 }
-.aside .nav li a{
+
+.aside .nav li {
+    margin-bottom: 20px; /* Space between items */
+    display: block; /* Ensure each item takes full width */
+}
+
+.aside .nav li a {
     font-size: 16px;
     font-weight: 600;
     display: block;
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
-    padding: 5px 15px;
+    padding: 10px 15px; /* Adjusted padding for better click area */
+    transition: background 0.3s; /* Smooth transition for hover effect */
 }
 .aside .nav li a.active
 {
@@ -258,6 +281,56 @@ ul{
 }
 .aside .nav li a i{
     margin-right: 15px;
+}
+@media (max-width: 768px) {
+    /* Hide the sidebar by default */
+    .aside {
+        width: 0; /* Collapsing the sidebar */
+        overflow: hidden; /* Prevent content overflow */
+        padding: 0; /* Remove padding when collapsed */
+    }
+
+    /* Show toggle button */
+    .aside .nav-toggler {
+        display: flex; /* Show toggle button on small screens */
+    }
+
+    /* Toggle button position adjustment */
+    .aside .nav-toggler {
+        left: 20px; /* Position the toggle button closer to the edge */
+        top: 20px; /* Adjust as necessary */
+    }
+
+    /* When the sidebar is toggled (open state) */
+    .aside.open {
+        width: 270px; /* Expand the sidebar */
+        padding: 30px; /* Add padding back */
+        transition: width 0.3s ease; /* Smooth transition */
+    }
+
+    /* Styles for the navigation items when the sidebar is open */
+    .aside.open .nav {
+        display: flex; /* Ensure nav is visible */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .aside .nav li {
+        display: block; /* Ensure nav items display as blocks */
+    }
+
+    /* Additional styles for nav links */
+    .aside .nav li a {
+        font-size: 16px; /* Adjust font size if necessary */
+        color: var(--text-black-900); /* Ensure text color is visible */
+        padding: 5px 15px; /* Add padding for clickable area */
+        border-bottom: 1px solid var(--bg-black-50); /* Divider style */
+    }
+
+    /* Optional: Hover effects for better UX */
+    .aside .nav li a:hover {
+        background-color: var(--bg-gray-200); /* Change background on hover */
+        color: var(--text-black-800); /* Adjust text color on hover */
+    }
 }
 /*home*/
 .home{
@@ -304,6 +377,11 @@ h3.my-profession{
     text-align: center;
     position: relative;
 }
+.home .home-img img /* Photo */ {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+}
 .home-img::after{
     content: '';
     height: 90px;
@@ -332,6 +410,53 @@ h3.my-profession{
     margin: auto;
     border-radius: 5px;
 }
+@media (max-width: 768px) {
+    .home {
+        min-height: 130vh;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-info {
+        max-width: 100%;
+    }
+
+    h3.hello {
+        font-size: 20px;
+        margin: 15px 0;
+    
+    }
+
+    h3.hello span {
+        font-size: 20px;
+        font-weight: 660;
+    }
+
+    h3.my-profession {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+
+    .home .home-img {
+        max-width: 100%;
+    }
+
+    .home .home-img img {
+        width: 90%;
+        height: auto;
+        min-width: 300px;
+        text-align: center;
+        position: center;
+    }
+    .home-info p{
+        margin-bottom: 70px;
+        font-size: 17px;
+        color: var(--text-black-700);
+        text-align: justify;
+    }
+    
+  }
+
 
 /*About sub id*/
 
