@@ -6,7 +6,6 @@ var typed = new Typed(".typing",{
     loop:true
 })
 /*Aside*/
-
 // Select necessary elements
 const nav = document.querySelector(".nav");
 const navList = nav.querySelectorAll("li");
@@ -20,7 +19,7 @@ for (let i = 0; i < totalNavList; i++) {
             navList[j].querySelector("a").classList.remove("active");
         }
         this.classList.add('active'); // Color change to indicate active page
-        showSelection(this);
+        showSelection(this); // Call a function to show the selection
     });
 }
 
@@ -29,9 +28,9 @@ const toggler = document.querySelector('.nav-toggler');
 const aside = document.querySelector('.aside');
 
 toggler.addEventListener('click', function () {
-    
+    aside.classList.toggle('open'); 
     console.log("Toggle button clicked!");
-    aside.classList.toggle('open'); // Toggle the 'open' class on sidebar
+    // Toggle the 'open' class on sidebar
 });
 
 // Optional: Close the sidebar when a nav link is clicked on small screens

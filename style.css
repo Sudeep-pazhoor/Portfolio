@@ -136,37 +136,35 @@ body{
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 /*Setting Aside*/
-/* Aside Styles */
-.aside {
-    width: 270px; /* Width of the sidebar */
+.aside
+{
+    width: 270px;
     background: var(--bg-black-100);
     position: fixed;
     left: 0;
     top: 0;
-    padding: 30px;
+    padding:30px;
     height: 100%;
     border-right: 1px solid var(--bg-black-50);
     display: flex;
-    flex-direction: column; /* Ensure items are arranged vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: flex-start; /* Align items to the left */
+    justify-content: center;
+    align-items: center;
     z-index: 10;
-}
 
-/* Setting unordered list */
-ul {
+}/*Setting unordered list*/
+ul{
     list-style: none;  
 }
-
-/* Setting logo */
-.aside .logo {
+/*Setting logo*/
+.aside .logo
+{
     position: absolute;
     top: 50px;
     font-size: 30px;
     text-transform: capitalize;
 }
-
-.aside .logo a {
+.aside .logo a
+{
     color: var(--text-black-900);
     font-weight: 700;
     padding: 15px 20px;
@@ -181,9 +179,9 @@ ul {
     font-size: 40px;
 
 }
-
-/* L-shaped borders for the logo */
-.aside .logo a::before {
+/*Setting logo L shaped near Aside (Left Bottom)*/
+.aside .logo a::before
+{
     content: '';
     position: absolute;
     width: 20px;
@@ -205,9 +203,9 @@ ul {
     top: 0;
     right: 0;
 }
-
-/* Navigation toggler styles */
-.aside .nav-toggler {
+/*to set one box with 3 lines near Home box*/
+.aside .nav-toggler
+{
     height: 40px;
     width: 45px;
     border: 1px solid var(--bg-black-50);
@@ -222,13 +220,13 @@ ul {
     justify-content: center;
 
 }
-
-.aside .nav-toggler span {
-    height: 2px;
-    width: 18px; 
-    background: var(--skin-color);
-    display: inline-block;
-    position: relative;
+.aside .nav-toggler span
+{
+   height: 2px;
+   width: 18px; 
+   background: var(--skin-color);
+   display: inline-block;
+   position: relative;
 
 }/*to set top line above current formed line(mid)*/
 .aside .nav-toggler span::before{
@@ -239,8 +237,10 @@ ul {
     position: absolute;
     top: -6px;
     left: 0;
+
 }
-.aside .nav-toggler span::after {
+/*to set bottom line below current formed line(mid)*/
+.aside .nav-toggler span::after{
     content: '';
     height: 2px;
     width: 18px;
@@ -248,32 +248,23 @@ ul {
     position: absolute;
     bottom: -6px;
     left: 0;
-}
 
-/* Navigation menu styles */
-.aside .nav {
-    margin-top: 80px; /* Adjusted margin to avoid overlap with logo and toggler */
-    width: 100%; /* Ensures nav takes full width of aside */
-    display: none; /* Initially hide the nav for smaller screens */
+}/*to set content appearence of aside tagged elements*/
+.aside .nav{
+    margin-top: 50px;
 }
-
-.aside .nav.active {
-    display: block; /* Show nav when active */
+.aside .nav li
+{
+    margin-bottom: 20px;
+    display: block;
 }
-
-.aside .nav li {
-    margin-bottom: 20px; /* Space between items */
-    display: block; /* Ensure each item takes full width */
-}
-
-.aside .nav li a {
+.aside .nav li a{
     font-size: 16px;
     font-weight: 600;
     display: block;
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
-    padding: 10px 15px; /* Adjusted padding for better click area */
-    transition: background 0.3s; /* Smooth transition for hover effect */
+    padding: 5px 15px;
 }
 .aside .nav li a.active
 {
@@ -287,25 +278,24 @@ ul {
     .aside {
         width: 0; /* Collapsing the sidebar */
         overflow: hidden; /* Prevent content overflow */
-        padding: 0; /* Remove padding when collapsed */
+        padding: 0;
+        transition: width 0.3s ease; /* Smooth transition when toggling */
     }
 
     /* Show toggle button */
     .aside .nav-toggler {
         display: flex; /* Show toggle button on small screens */
-    }
-
-    /* Toggle button position adjustment */
-    .aside .nav-toggler {
+        position: fixed; /* Fixed positioning for the toggle button */
         left: 20px; /* Position the toggle button closer to the edge */
         top: 20px; /* Adjust as necessary */
+        cursor: pointer; /* Indicate it’s clickable */
+        z-index: 15; /* Ensure it’s above other content */
     }
 
     /* When the sidebar is toggled (open state) */
     .aside.open {
         width: 270px; /* Expand the sidebar */
         padding: 30px; /* Add padding back */
-        transition: width 0.3s ease; /* Smooth transition */
     }
 
     /* Styles for the navigation items when the sidebar is open */
@@ -377,11 +367,6 @@ h3.my-profession{
     text-align: center;
     position: relative;
 }
-.home .home-img img /* Photo */ {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px;
-}
 .home-img::after{
     content: '';
     height: 90px;
@@ -424,7 +409,6 @@ h3.my-profession{
     h3.hello {
         font-size: 20px;
         margin: 15px 0;
-    
     }
 
     h3.hello span {
@@ -437,26 +421,12 @@ h3.my-profession{
         margin: 15px 0;
     }
 
-    .home .home-img {
-        max-width: 100%;
-    }
-
-    .home .home-img img {
-        width: 90%;
-        height: auto;
-        min-width: 300px;
-        text-align: center;
-        position: center;
-    }
-    .home-info p{
-        margin-bottom: 70px;
+    .home-info p {
         font-size: 17px;
         color: var(--text-black-700);
         text-align: justify;
     }
-    
-  }
-
+}
 
 /*About sub id*/
 
@@ -654,7 +624,7 @@ h3.my-profession{
     transition: all 0.2s ease;
     text-align: center;
     padding-bottom: 40px;
-    
+
 }
 .service .service-item .service-item-inner:hover{/*hovering on box*/
     box-shadow: 0 0 20px rgba(243, 9, 9, 0.823);
