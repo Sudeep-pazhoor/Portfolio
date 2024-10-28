@@ -276,33 +276,38 @@ ul{
 @media (max-width: 768px) {
     /* Hide the sidebar by default */
     .aside {
-        width: 0; /* Collapsing the sidebar */
-        overflow: hidden; /* Prevent content overflow */
-        padding: 0;
+    width: 0;
+    overflow: hidden;
+    padding: 0;
         transition: width 0.3s ease; /* Smooth transition when toggling */
     }
 
     /* Show toggle button */
     .aside .nav-toggler {
-        display: flex; /* Show toggle button on small screens */
-        position: fixed; /* Fixed positioning for the toggle button */
-        left: 20px; /* Position the toggle button closer to the edge */
-        top: 20px; /* Adjust as necessary */
-        cursor: pointer; /* Indicate it’s clickable */
-        z-index: 15; /* Ensure it’s above other content */
-    }
+    display: flex;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 15;
+}
+
+/* Hide the navigation menu by default */
+.nav-menu {
+  display: none;
+}
 
     /* When the sidebar is toggled (open state) */
     .aside.open {
-        width: 270px; /* Expand the sidebar */
-        padding: 30px; /* Add padding back */
-    }
+    width: 270px;
+    padding: 30px;
+}
 
     /* Styles for the navigation items when the sidebar is open */
     .aside.open .nav {
-        display: flex; /* Ensure nav is visible */
-        flex-direction: column; /* Stack items vertically */
-    }
+    display: flex;
+    flex-direction: column;
+}
 
     .aside .nav li {
         display: block; /* Ensure nav items display as blocks */
@@ -310,17 +315,17 @@ ul{
 
     /* Additional styles for nav links */
     .aside .nav li a {
-        font-size: 16px; /* Adjust font size if necessary */
-        color: var(--text-black-900); /* Ensure text color is visible */
-        padding: 5px 15px; /* Add padding for clickable area */
-        border-bottom: 1px solid var(--bg-black-50); /* Divider style */
-    }
+    font-size: 16px;
+    color: var(--text-black-900);
+    padding: 5px 15px;
+    border-bottom: 1px solid var(--bg-black-50);
+}
 
-    /* Optional: Hover effects for better UX */
-    .aside .nav li a:hover {
-        background-color: var(--bg-gray-200); /* Change background on hover */
-        color: var(--text-black-800); /* Adjust text color on hover */
-    }
+/* Optional: Hover effects for better UX */
+.aside .nav li a:hover {
+    background-color: var(--bg-gray-200);
+    color: var(--text-black-800);
+}
 }
 /*home*/
 .home{

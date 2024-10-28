@@ -32,13 +32,11 @@ toggler.addEventListener('click', function () {
     console.log("Toggle button clicked!");
     // Toggle the 'open' class on sidebar
 });
-
-// Optional: Close the sidebar when a nav link is clicked on small screens
-for (let i = 0; i < totalNavList; i++) {
-    const a = navList[i].querySelector("a");
-    a.addEventListener("click", function () {
-        if (window.innerWidth <= 768) { // Check if screen width is small
-            aside.classList.remove('open'); // Close the sidebar
-        }
-    });
-};
+// Close the sidebar when a nav link is clicked on small screens
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { // Check if screen width is small
+        aside.classList.remove('open'); // Close the sidebar
+      }
+  });
+  });
