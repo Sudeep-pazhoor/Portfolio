@@ -175,6 +175,10 @@ ul{
     position: relative;
 
 }
+.nav-menu {
+    display: none;
+}
+
 .aside .logo a span
 {
     font-family: 'Clicker Script', cursive;
