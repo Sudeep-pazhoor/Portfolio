@@ -177,9 +177,6 @@ ul{
 }
 .nav-menu {
     display: none; /* Hide menu initially on small screens */
-    flex-direction: column; /* Vertical layout for mobile */
-    padding: 0;
-    margin-top: 0;
 }
 
 .aside .logo a span
