@@ -175,6 +175,10 @@ ul{
     position: relative;
 
 }
+.nav-toggler {
+    display: none;
+
+}
 .nav-menu {
     display: none; /* Hide menu initially on small screens */
 }
